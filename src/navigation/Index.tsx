@@ -8,7 +8,7 @@ export const AuthContext = createContext({});
 
 const Index = () => {
   const client = new ApolloClient({
-    uri: 'http://localhost:8002/graphql',
+    uri: 'https://muni-denuncia-api.herokuapp.com/graphql',
     cache: new InMemoryCache(),
   });
 
