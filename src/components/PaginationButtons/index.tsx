@@ -9,6 +9,7 @@ const PaginationButtons = ({setPage, page}) => {
         justifyContent: 'space-around',
         paddingBottom: 20,
       }}>
+     
       <TouchableOpacity
         disabled={page <= 1}
         onPress={() => {
@@ -21,7 +22,9 @@ const PaginationButtons = ({setPage, page}) => {
           borderRadius: 5,
         }}>
         <Text style={{color: 'white', fontSize: 18}}>Last Page</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> 
+      
+
       <TouchableOpacity
         onPress={() => {
           setPage(page + 1);

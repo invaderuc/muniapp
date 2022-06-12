@@ -4,46 +4,27 @@ import {useNavigation} from '@react-navigation/native';
 
 const width = Dimensions.get('window').width;
 
-const CharacterItem = ({character}) => {
+const DenunciaItem = ({denuncia}) => {
   const navigation: any = useNavigation();
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate('Details', {character});
+        navigation.navigate('Details', {denuncia});
       }}
       style={{maxWidth: '100%', paddingVertical: 20}}
-      key={character.id}>
+      key={denuncia.id}>
       <Image
-        source={{uri: character?.image}}
+        source={{uri: denuncia?.image}}
         style={{height: 300, width: width * 0.9, borderRadius: 5}}
       />
       <Text style={{marginTop: 8, fontSize: 18, fontWeight: '800'}}>
-        {character.name}
+        {denuncia.title}
       </Text>
       <Text style={{marginTop: 2, fontSize: 15, fontWeight: '500'}}>
-        id: {character.id}
+        {denuncia.description}
       </Text>
-      <Text style={{marginTop: 2, fontSize: 15, fontWeight: '500'}}>
-        Type: {character.type}
-      </Text>
-
-      {character.status == 'Alive' ? (
-        <Text
-          style={{
-            marginTop: 2,
-            fontSize: 15,
-            fontWeight: '500',
-            color: 'green',
-          }}>
-          Status: {character.status}
-        </Text>
-      ) : (
-        <Text style={{marginTop: 2, fontSize: 15, fontWeight: '500'}}>
-          Status: {character.status}
-        </Text>
-      )}
     </TouchableOpacity>
   );
 };
 
-export default CharacterItem;
+export default DenunciaItem;

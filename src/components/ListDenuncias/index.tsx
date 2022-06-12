@@ -1,24 +1,27 @@
 import React from 'react';
 import {View, Text, ActivityIndicator, TouchableOpacity} from 'react-native';
 import {useQuery, useMutation} from '@apollo/client';
-import CharacterItem from '../ItemDenuncia';
-import {CHARACTER_QUERY} from './querys';
+import DenunciaItem from '../ItemDenuncia';
+import {CHARACTER_QUERY_LIST_PAGINATOR} from './querys';
 import {Camera} from 'react-native-vision-camera';
 import {useNavigation} from '@react-navigation/native';
+import {useState} from 'react';
 
 const Index = ({page}) => {
 
-  const [list, { data, loading, error }] = useMutation(CHARACTER_QUERY,{
-      variables: {sort: "createdAt",order: "DESC",page: page}},
-  );
+  const {data,loading,error} = useQuery(CHARACTER_QUERY_LIST_PAGINATOR, {
+    variables: {sort: "createdAt",order: "DESC",page: page},
+  });
 
   if (loading)
     return <ActivityIndicator size={'large'} style={{padding: 20}} />;
 
   if (error) return <Text>El servidor ha fallado</Text>;
+  
+
+  const parseData = data?.listPaginator ? data?.listPaginator : [];
   console.log(data);
-  console.log(list);
-  const parseData = data?.characters?.results ? data?.characters?.results : [];
+  console.log(parseData);
   const navigation: any = useNavigation();
   return (
     <View style={{alignItems: 'center'}}>
@@ -45,7 +48,7 @@ const Index = ({page}) => {
           <Text style={{color: 'white'}}>Subir Denuncia</Text>
         </TouchableOpacity>
       {parseData.map(item => {
-        return <CharacterItem character={item} key={item?.id} />;
+        return <DenunciaItem denuncia={item} key={item?.id} />;
       })}
     </View>
   );

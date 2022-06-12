@@ -4,42 +4,26 @@ import {useRoute} from '@react-navigation/native';
 
 const Index = () => {
   const route: any = useRoute();
-  const character = route?.params?.character;
+  const denuncia = route?.params?.denuncia;
   
   return (
     <SafeAreaView>
       <View style={{alignItems: 'center', padding: 20}}>
         <Image
-          source={{uri: character.image}}
+          source={{uri: denuncia.image}}
           style={{height: 300, width: 300, borderRadius: 10}}
         />
-        <Text style={{marginTop: 8, fontSize: 20, fontWeight: '800'}}>
-          {character.name}
+        <Text style={{marginTop: 8, fontSize: 20, fontWeight: '900',}}>
+          {denuncia?.title}
         </Text>
         <Text style={{marginTop: 2, fontSize: 15, fontWeight: '500'}}>
-          Genero: {character.gender}
+          {denuncia?.description}
         </Text>
         <Text style={{marginTop: 2, fontSize: 15, fontWeight: '500'}}>
-          Tipo: {character.type}
+          latitude: {denuncia?.latitude}
         </Text>
-
-        {character.status == 'Alive' ? (
-          <Text
-            style={{
-              marginTop: 2,
-              fontSize: 15,
-              fontWeight: '500',
-              color: 'green',
-            }}>
-            Estado: {character.status}
-          </Text>
-        ) : (
-          <Text style={{marginTop: 2, fontSize: 15, fontWeight: '500'}}>
-            Status: {character.status}
-          </Text>
-        )}
         <Text style={{marginTop: 2, fontSize: 15, fontWeight: '500'}}>
-          Localización: {character?.location.name}
+          longitude: {denuncia?.longitude}
         </Text>
       </View>
     </SafeAreaView>
