@@ -21,11 +21,13 @@
     "graphql": "^16.5.0",
     "react": "17.0.2",
     "react-native": "0.68.2",
+    "react-native-compressor": "^1.5.2",
     "react-native-gesture-handler": "^2.4.2",
     "react-native-get-location": "^2.2.1",
     "react-native-safe-area-context": "^4.2.5",
     "react-native-screens": "^3.13.1",
-    "react-native-vision-camera": "^2.13.3"
+    "react-native-vision-camera": "^2.13.3",
+    "react-redux": "^8.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",

@@ -9,12 +9,12 @@ const DenunciaItem = ({denuncia}) => {
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate('Details', {denuncia});
+        navigation.navigate('Detalle', {denuncia});
       }}
       style={{maxWidth: '100%', paddingVertical: 20}}
       key={denuncia.id}>
       <Image
-        source={{uri: denuncia?.image}}
+        source={{uri: denuncia?.image_url}}
         style={{height: 300, width: width * 0.9, borderRadius: 5}}
       />
       <Text style={{marginTop: 8, fontSize: 18, fontWeight: '800'}}>

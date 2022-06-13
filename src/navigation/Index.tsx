@@ -3,8 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import StackNavigator from './StackNavigator';
 import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
 
-export const CartContext = createContext({});
-export const AuthContext = createContext({});
+export const ImageContext = createContext({});
 
 const Index = () => {
   const client = new ApolloClient({
@@ -15,13 +14,13 @@ const Index = () => {
   const [photo, setPhoto] = useState();
 
   return (
-      <CartContext.Provider value={{ photo, setPhoto}}>
+      <ImageContext.Provider value={{ photo, setPhoto}}>
         <ApolloProvider client={client}>
           <NavigationContainer>
             <StackNavigator />
           </NavigationContainer>
         </ApolloProvider>
-      </CartContext.Provider>
+      </ImageContext.Provider>
   );
 };
 

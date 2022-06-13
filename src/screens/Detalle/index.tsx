@@ -10,7 +10,7 @@ const Index = () => {
     <SafeAreaView>
       <View style={{alignItems: 'center', padding: 20}}>
         <Image
-          source={{uri: denuncia.image}}
+          source={{uri: denuncia.image_url}}
           style={{height: 300, width: 300, borderRadius: 10}}
         />
         <Text style={{marginTop: 8, fontSize: 20, fontWeight: '900',}}>

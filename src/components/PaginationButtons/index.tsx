@@ -16,12 +16,22 @@ const PaginationButtons = ({setPage, page}) => {
           setPage(page - 1);
         }}
         style={{
-          paddingHorizontal: 15,
-          paddingVertical: 10,
-          backgroundColor: '#22d3ee',
-          borderRadius: 5,
+          borderRadius: 16,
+          alignSelf: 'center',
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 7,
+            height: 5,
+          },
+          shadowOpacity: 1.58,
+          shadowRadius: 9,
+          elevation: 4,
+          margin: 10,
+          padding: 10,
+          backgroundColor: '#fe5b29',
+          alignItems: 'center'
         }}>
-        <Text style={{color: 'white', fontSize: 18}}>Last Page</Text>
+        <Text style={{color: 'white', fontSize: 18}}>Anterior</Text>
       </TouchableOpacity> 
       
 
@@ -30,12 +40,22 @@ const PaginationButtons = ({setPage, page}) => {
           setPage(page + 1);
         }}
         style={{
-          paddingHorizontal: 15,
-          paddingVertical: 10,
-          backgroundColor: '#22d3ee',
-          borderRadius: 5,
+          borderRadius: 16,
+          alignSelf: 'center',
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 7,
+            height: 5,
+          },
+          shadowOpacity: 1.58,
+          shadowRadius: 9,
+          elevation: 4,
+          margin: 10,
+          padding: 10,
+          backgroundColor: '#fe5b29',
+          alignItems: 'center'
         }}>
-        <Text style={{color: 'white', fontSize: 18}}>Next Page</Text>
+        <Text style={{color: 'white', fontSize: 18}}>Siguiente</Text>
       </TouchableOpacity>
     </View>
   );
