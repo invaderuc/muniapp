@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, TextInput,View,TouchableOpacity, Text, Dimensions } from "react-native";
+import { SafeAreaView, StyleSheet, TextInput,View,TouchableOpacity, Text, Dimensions,LogBox } from "react-native";
 import React, {useContext,useState} from 'react';
 import {CHARACTER_MUTATION_CREATE} from '../../components/ListDenuncias/querys';
 import {useMutation} from '@apollo/client';
@@ -6,6 +6,7 @@ import { Image } from 'react-native-compressor';
 import axios from "axios";
 import {ImageContext} from '../../navigation/Index';
 import {useNavigation,useRoute} from '@react-navigation/native';
+
 //import { useSelector } from "react-redux";
 
 const Index = () => {
@@ -18,7 +19,7 @@ const Index = () => {
   const [description, onChangeDescripction] = React.useState("");
   const [location, onChangeLocation] = React.useState(route?.params?.location);
   const [create, { data, loading, error }] = useMutation(CHARACTER_MUTATION_CREATE);
-
+  LogBox.ignoreLogs(['new NativeEventEmitter']);
   const doSend = async () => {
 
     setLoadingEnviar(true);
